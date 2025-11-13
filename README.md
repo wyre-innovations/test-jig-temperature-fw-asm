@@ -17,21 +17,20 @@ test-jig-temperature-fw-asm/
 
 ## Pinout
 
-### ADC Channels (RA0-RA4)
-- RA0 (AN0) - Temperature Sensor 1
-- RA1 (AN1) - Temperature Sensor 2
-- RA2 (AN2) - Temperature Sensor 3
-- RA3 (AN3) - Temperature Sensor 4
-- RA5 (AN4) - Temperature Sensor 5 (Note: RA4 is not used)
-
-### LCD Interface (RB0-RB6)
-- RB0 - LCD_RS (Register Select)
-- RB1 - LCD_EN (Enable)
-- RB2 - LCD_BACKLIGHT
-- RB3 - LCD_D4 (Data bit 4)
-- RB4 - LCD_D5 (Data bit 5)
-- RB5 - LCD_D6 (Data bit 6)
-- RB6 - LCD_D7 (Data bit 7)
+| Pin      | Function     | Description              |
+|----------|--------------|--------------------------|
+| RA0 (AN0)| ADC Channel  | Temperature Sensor 1     |
+| RA1 (AN1)| ADC Channel  | Temperature Sensor 2     |
+| RA2 (AN2)| ADC Channel  | Temperature Sensor 3     |
+| RA3 (AN3)| ADC Channel  | Temperature Sensor 4     |
+| RA5 (AN4)| ADC Channel  | Temperature Sensor 5 (Note: RA4 is not used) |
+| RB0      | LCD_RS       | Register Select          |
+| RB1      | LCD_EN       | Enable                   |
+| RB2      | LCD_BACKLIGHT| Backlight Control        |
+| RB3      | LCD_D4       | Data bit 4               |
+| RB4      | LCD_D5       | Data bit 5               |
+| RB5      | LCD_D6       | Data bit 6               |
+| RB6      | LCD_D7       | Data bit 7               |
 
 ## Setup Instructions
 
