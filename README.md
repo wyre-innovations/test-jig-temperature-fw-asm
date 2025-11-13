@@ -2,6 +2,34 @@
 
 This firmware implements a temperature monitoring system using 5 ADC channels connected to NTC thermistors, displaying readings on a 16x2 LCD in 4-bit mode.
 
+## Setup Instructions
+
+### Prerequisites
+- gpasm (GNU PIC assembler) - Install via Homebrew: `brew install gputils`
+- PIC16F72 microcontroller
+- 16x2 LCD display (HD44780 compatible)
+- 5 NTC thermistors with voltage divider circuits
+- PIC programmer (e.g., PICkit, ICD, or custom programmer)
+
+### Building the Firmware
+
+1. Clone or navigate to the project directory:
+   ```bash
+   cd test-jig-temperature-fw-asm
+   ```
+
+2. Build the project:
+   ```bash
+   make
+   ```
+
+   This will generate `app.hex` which can be programmed to the PIC16F72.
+
+3. Clean build artifacts:
+   ```bash
+   make clean
+   ```
+
 ## Project Structure
 
 ```
@@ -31,31 +59,3 @@ test-jig-temperature-fw-asm/
 | RB4      | LCD_D5       | Data bit 5               |
 | RB5      | LCD_D6       | Data bit 6               |
 | RB6      | LCD_D7       | Data bit 7               |
-
-## Setup Instructions
-
-### Prerequisites
-- gpasm (GNU PIC assembler) - Install via Homebrew: `brew install gputils`
-- PIC16F72 microcontroller
-- 16x2 LCD display (HD44780 compatible)
-- 5 NTC thermistors with voltage divider circuits
-- PIC programmer (e.g., PICkit, ICD, or custom programmer)
-
-### Building the Firmware
-
-1. Clone or navigate to the project directory:
-   ```bash
-   cd test-jig-temperature-fw-asm
-   ```
-
-2. Build the project:
-   ```bash
-   make
-   ```
-
-   This will generate `app.hex` which can be programmed to the PIC16F72.
-
-3. Clean build artifacts:
-   ```bash
-   make clean
-   ```
