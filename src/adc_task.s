@@ -1,6 +1,6 @@
 ; ADC task for reading temperature sensors
 
-#include <p16f72.inc>
+#include "inc/p16f72.inc"
 
     CODE
 
@@ -25,10 +25,13 @@ ADC_LOOP:
     MOVWF   FSR     ; Point to buffer
 
 READ_ADC_LOOP:
-    ; Configure ADC channel (simplified - assumes sequential channels AN0-AN4)
+    ; Configure ADC channel
     MOVF    TEMP, W
     SUBLW   5
-    MOVWF   ADCON0  ; Set channel (AN0=0, AN1=8, etc.)
+    MOVWF   TEMP2   ; Store channel number
+    MOVLW   0xC1    ; ADON=1, ADCS1=0, ADCS0=1 (FOSC/8), CHS2=0, CHS1=0, CHS0=0
+    IORWF   TEMP2, W ; Add channel bits
+    MOVWF   ADCON0  ; Set channel and enable ADC
 
     ; Start conversion
     BSF     ADCON0, GO

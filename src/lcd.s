@@ -1,6 +1,6 @@
 ; LCD driver implementation for 16x2 LCD in 4-bit mode
 
-#include <p16f72.inc>
+#include "inc/p16f72.inc"
 
     CODE
 

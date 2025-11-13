@@ -1,6 +1,6 @@
 ; LCD task for displaying temperature data
 
-#include <p16f72.inc>
+#include "inc/p16f72.inc"
 
     CODE
 
