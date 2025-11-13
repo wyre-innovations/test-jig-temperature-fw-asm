@@ -1,0 +1,26 @@
+; Main application file for PIC16F72
+
+#include <p16f72.inc>
+
+EXTERN HARDWARE_INIT, LCD_INIT, ADC_SETUP, ADC_LOOP, LCD_TASK_SETUP, LCD_TASK_LOOP
+
+; Reset vector
+    ORG 0x0000
+    GOTO SETUP
+
+; Interrupt vector (if needed)
+    ORG 0x0004
+    RETFIE
+
+SETUP:
+    CALL HARDWARE_INIT
+    CALL LCD_INIT
+    CALL ADC_SETUP
+    CALL LCD_TASK_SETUP
+
+LOOP:
+    CALL ADC_LOOP
+    CALL LCD_TASK_LOOP
+    GOTO LOOP
+
+END
