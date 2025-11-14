@@ -2,8 +2,7 @@
 
 GPASM   := gpasm
 GPLINK  := gplink
-PROC    := p16f72
-GPASM_FLAGS := -c -p $(PROC) -I inc
+GPASM_FLAGS := -c -I inc
 
 SRC_DIR := src
 OUT_DIR := out
@@ -22,7 +21,7 @@ $(OUT_DIR):
 
 # link object files into final hex (use gplink)
 $(TARGET): $(OBJECTS) | $(OUT_DIR)
-	$(GPLINK) -p $(PROC) -s 16f72_g.lkr -o $@ $(OBJECTS)
+	$(GPLINK) -s 16f72_g.lkr -o $@ $(OBJECTS)
 
 # assemble each .s into a relocatable object (.o)
 # note: $< is like src/foo.s -> produces out/foo.o

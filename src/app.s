@@ -1,5 +1,6 @@
 ; Main application file
 
+#include "inc/device.inc"
 #include "inc/p16f72.inc"
 
 EXTERN HARDWARE_INIT, LCD_INIT, ADC_SETUP, ADC_LOOP, LCD_TASK_SETUP, LCD_TASK_LOOP
@@ -27,4 +28,4 @@ LOOP:
     CALL LCD_TASK_LOOP
     GOTO LOOP
 
-END
+    END

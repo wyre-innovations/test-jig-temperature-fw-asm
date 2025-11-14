@@ -1,0 +1,1 @@
+LIST P = PIC16F72

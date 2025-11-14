@@ -2,6 +2,7 @@
 ; Initialize RA0 to RA3 & RA5 as ADC channels
 ; Set RB0 to RB6 as GPIO outputs for LCD pins
 
+#include "inc/device.inc"
 #include "inc/p16f72.inc"
 
     CODE
